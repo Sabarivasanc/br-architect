@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin: 8px 16px;
+    padding: 10px;
+}
+
+.logo:hover {
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+}
+
+.menu li {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.menu li:hover {
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+}
+
+.menu li:hover>a {
+    color: white;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 55%;
+    left: 38%;
+}
+
+.BR {
+    background-color: black;
+    opacity: 0.75;
+    color: white;
+    letter-spacing: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 36px;
+    padding: 8px 16px;
+}
+
+.BR-1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 4px;
+}
+
+.project {
+    margin: 20px;
+}
+
+.project-title>p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin: 10px 0px;
+    padding: 16px 0px;
+}
+
+.img-container {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.img-1 {
+    position: relative;
+    margin: 0px 5px;
+}
+
+.img-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.About {
+    margin: 20px;
+}
+
+.About-title {
+    margin: 10px 0px;
+    padding: 16px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    border-bottom: 1px solid wheat;
+}
+
+.about-content {
+    margin: 8px 0px;
+    padding: 16px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+
+}
+
+.gallery-content {
+
+    display: flex;
+    gap: 10px;
+    padding: 8px 16px;
+    margin: 0px 25px;
+}
+
+.Author {
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.Designation {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 23px;
+    opacity: 0.75;
+}
+
+.description {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 15px 0px;
+}
+
+.gallery-img1 {
+
+    filter: grayscale(80%);
+}
+
+.contact-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 400;
+    color: black;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.contact-btn:hover {
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+}
+
+.Contact {
+    margin: 20px;
+}
+
+.Contact-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin: 10px 0px;
+    padding: 16px 0px;
+}
+
+.form-title {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 0px;
+}
+
+.input {
+    padding: 8px;
+    width: 98%;
+
+}
+
+.button {
+    padding: 8px 16px;
+    color: white;
+    background-color: black;
+    border: none;
+
+
+}
+
+.button:hover {
+    color: black;
+    background-color: rgb(172, 172, 172);
+}
+
+.map {
+    padding: 0px 25px;
+}
+
+footer {
+    height: 45px;
+    padding: 20px;
+    margin-top: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 15px;
+}
+
+.w3 {
+    color: white;
+}
+
+.w3:hover {
+    color: green;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-1 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .banner-text {
+        font-size: 24px;
+        display:none
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 16px;
+    }
+    .menu li a {
+        font-size: 14px;
+    }
+    .banner-text {
+        font-size: 20px;
+        display:none
+    }
+}
