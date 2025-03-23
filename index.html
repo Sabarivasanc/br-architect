@@ -5,70 +5,492 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B R Architects</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 15px;
+            letter-spacing: 3px;
+            padding: 10px;
+        }
+
+        .logo:hover {
+            background-color: black;
+            opacity: 0.5;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 10px;
+        }
+
+        .menu li:hover {
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        .menu li:hover > a {
+            color: white;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+            letter-spacing: 3px;
+        }
+
+        /* Banner Styles */
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .BR {
+            background-color: black;
+            opacity: 0.75;
+            color: white;
+            letter-spacing: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 36px;
+            padding: 8px 16px;
+        }
+
+        .BR-1 {
+            color: white;
+            font-size: 36px;
+            font-weight: 400;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 4px;
+        }
+
+        /* Project Section */
+        .project {
+            margin: 20px;
+            padding-top: 60px; /* To account for fixed navbar */
+        }
+
+        .project-title > p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            margin: 10px 0;
+            padding: 16px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .img-1 {
+            position: relative;
+            flex: 1 1 22%;
+            min-width: 200px;
+        }
+
+        .img-1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .img-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            font-size: 15px;
+        }
+
+        /* About Section */
+        .About {
+            margin: 20px;
+        }
+
+        .About-title {
+            margin: 10px 0;
+            padding: 16px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .about-content {
+            margin: 8px 0;
+            padding: 16px 0;
+        }
+
+        .about-content p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 8px 16px;
+            margin: 0 25px;
+        }
+
+        .gallery-img1 {
+            flex: 1 1 22%;
+            min-width: 200px;
+            filter: grayscale(80%);
+        }
+
+        .gallery-img1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .Author {
+            font-size: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            line-height: 36px;
+            margin-top: 10px;
+        }
+
+        .Designation {
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            line-height: 23px;
+            opacity: 0.75;
+        }
+
+        .description {
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            line-height: 23px;
+            margin: 15px 0;
+        }
+
+        .contact-btn {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            line-height: 23px;
+            font-weight: 400;
+            color: black;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 8px 16px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            background-color: black;
+            opacity: 0.5;
+            color: white;
+        }
+
+        /* Contact Section */
+        .Contact {
+            margin: 20px;
+        }
+
+        .Contact-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            margin: 10px 0;
+            padding: 16px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .form-Container {
+            padding: 16px 0;
+        }
+
+        .form-title {
+            font-size: 15px;
+            margin: 15px 0;
+        }
+
+        .input {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .button {
+            padding: 8px 16px;
+            color: white;
+            background-color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            color: black;
+            background-color: rgb(172, 172, 172);
+        }
+
+        /* Map Section */
+        .map {
+            padding: 0 25px;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .w3 {
+            color: white;
+        }
+
+        .w3:hover {
+            color: green;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu li {
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu li a {
+                display: block;
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 14px;
+            }
+
+            .banner-text {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+            }
+
+            .BR, .BR-1 {
+                font-size: 24px;
+            }
+
+            .img-1 {
+                flex: 1 1 48%;
+                min-width: 150px;
+            }
+
+            .gallery-img1 {
+                flex: 1 1 48%;
+                min-width: 150px;
+            }
+
+            .form-Container {
+                padding: 10px;
+            }
+
+            .input {
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 12px;
+            }
+
+            .menu li a {
+                font-size: 14px;
+            }
+
+            .BR, .BR-1 {
+                font-size: 18px;
+                padding: 6px 12px;
+            }
+
+            .img-1 {
+                flex: 1 1 100%;
+            }
+
+            .gallery-img1 {
+                flex: 1 1 100%;
+            }
+
+            .project-title > p, .About-title, .Contact-title {
+                font-size: 20px;
+            }
+
+            .about-content p {
+                font-size: 12px;
+            }
+
+            .Author {
+                font-size: 20px;
+            }
+
+            .Designation, .description, .form-title {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <p class="logo"><b>BR</b> Architects</p>
-        <ul class="menu">
+        <button class="menu-toggle">☰</button>
+        <ul class="menu" id="menu">
             <li><a href="#">Projects</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
+
     <!-- Banner -->
     <section>
         <div>
-            <img class="banner-img" src="assets/images/architect.jpg" alt="banner-img" width="1500" height="800">
+            <img class="banner-img" src="assets/images/architect.jpg" alt="banner-img">
             <div class="banner-text">
                 <h1 class="h1"><span class="BR">BR</span><span class="BR-1"> Architects</span></h1>
             </div>
         </div>
     </section>
-    <!-- project -->
+
+    <!-- Project -->
     <section class="project">
         <div class="project-title">
             <p>Projects</p>
         </div>
         <div class="img-container">
             <div class="img-1">
-                <img src="assets/images/house5.jpg" alt="house5" width="100%">
+                <img src="assets/images/house5.jpg" alt="house5">
                 <p class="img-text">Summer House</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house2.jpg" alt="house2" width="100%">
+                <img src="assets/images/house2.jpg" alt="house2">
                 <p class="img-text">Brick House</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house3.jpg" alt="house3" width="100%">
+                <img src="assets/images/house3.jpg" alt="house3">
                 <p class="img-text">Renovated</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house4.jpg" alt="house4" width="100%">
+                <img src="assets/images/house4.jpg" alt="house4">
                 <p class="img-text">Barn House</p>
             </div>
         </div>
         <div class="img-container">
             <div class="img-1">
-                <img src="assets/images/house2.jpg" alt="house2" width="100%">
+                <img src="assets/images/house2.jpg" alt="house2">
                 <p class="img-text">Summer House</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house5.jpg" alt="house5" width="100%">
+                <img src="assets/images/house5.jpg" alt="house5">
                 <p class="img-text">Brick House</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house4.jpg" alt="house4" width="100%">
+                <img src="assets/images/house4.jpg" alt="house4">
                 <p class="img-text">Renovated</p>
             </div>
             <div class="img-1">
-                <img src="assets/images/house3.jpg" alt="house3" width="100%">
+                <img src="assets/images/house3.jpg" alt="house3">
                 <p class="img-text">Barn House</p>
             </div>
         </div>
     </section>
+
     <!-- About -->
     <section class="About">
         <div class="About-title">
@@ -83,11 +505,12 @@
                 ut aliquip ex ea commodo consequat.</p>
         </div>
     </section>
-    <!-- gallery -->
+
+    <!-- Gallery -->
     <section class="gallery">
         <div class="gallery-content">
             <div class="gallery-img1">
-                <img src="assets/images/team2.jpg" alt="gallery-img" width="100%">
+                <img src="assets/images/team2.jpg" alt="gallery-img">
                 <p class="Author">John Doe</p>
                 <p class="Designation">CEO & Founder</p>
                 <p class="description">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
@@ -95,7 +518,7 @@
                 <button class="contact-btn">Contact</button>
             </div>
             <div class="gallery-img1">
-                <img src="assets/images/team1.jpg" alt="gallery-img" width="100%">
+                <img src="assets/images/team1.jpg" alt="gallery-img">
                 <p class="Author">Jane Doe</p>
                 <p class="Designation">Architect</p>
                 <p class="description">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
@@ -103,7 +526,7 @@
                 <button class="contact-btn">Contact</button>
             </div>
             <div class="gallery-img1">
-                <img src="assets/images/team3.jpg" alt="gallery-img" width="100%">
+                <img src="assets/images/team3.jpg" alt="gallery-img">
                 <p class="Author">Mike Ross</p>
                 <p class="Designation">Architect</p>
                 <p class="description">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
@@ -111,7 +534,7 @@
                 <button class="contact-btn">Contact</button>
             </div>
             <div class="gallery-img1">
-                <img src="assets/images/team4.jpg" alt="gallery-img" width="100%">
+                <img src="assets/images/team4.jpg" alt="gallery-img">
                 <p class="Author">Dan Star</p>
                 <p class="Designation">Architect</p>
                 <p class="description">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
@@ -120,31 +543,52 @@
             </div>
         </div>
     </section>
+
     <!-- Form -->
     <section class="Contact">
         <div class="Contact-title">
             <p>Contact</p>
         </div>
         <div class="form-Container">
-            <p class="form-title">Lets get in touch and talk about your next project</p>
-            <input class="input" type="text" placeholder="Name"><br><br>
-            <input class="input" type="Email" placeholder="Email"> <br><br>
-            <input class="input" type="text" placeholder="Subject"> <br><br>
-            <input class="input" type="text" placeholder="Comment"> <br><br>
+            <p class="form-title">Let's get in touch and talk about your next project</p>
+            <input class="input" type="text" placeholder="Name"><br>
+            <input class="input" type="email" placeholder="Email"><br>
+            <input class="input" type="text" placeholder="Subject"><br>
+            <input class="input" type="text" placeholder="Comment"><br>
             <button class="button">SEND MESSAGE</button>
         </div>
     </section>
-    <!-- map -->
+
+    <!-- Map -->
     <section class="map">
         <div class="map-container">
-            <img src="assets/images/map.jpg" alt="map" width="100%">
+            <img src="assets/images/map.jpg" alt="map">
         </div>
     </section>
-    <!-- footer -->
+
+    <!-- Footer -->
     <footer>
         <p>Recreated by Sabarivasn C</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('active');
+                menuToggle.textContent = menu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    menu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
