@@ -80,6 +80,10 @@
         }
 
         /* Banner Styles */
+        .banner {
+            position: relative;
+        }
+
         .banner-img {
             width: 100%;
             height: auto;
@@ -115,7 +119,7 @@
         /* Project Section */
         .project {
             margin: 20px;
-            padding-top: 60px; /* To account for fixed navbar */
+            padding-top: 80px; /* Increased to account for fixed navbar */
         }
 
         .project-title > p {
@@ -367,10 +371,10 @@
             }
 
             .banner-text {
+                display: block; /* Ensure text is visible on mobile */
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                display: block;
             }
 
             .BR, .BR-1 {
@@ -398,6 +402,10 @@
 
             .input {
                 padding: 6px;
+            }
+
+            .project {
+                padding-top: 60px; /* Adjust for navbar height on mobile */
             }
         }
 
@@ -455,7 +463,7 @@
     </nav>
 
     <!-- Banner -->
-    <section>
+    <section class="banner">
         <div>
             <img class="banner-img" src="assets/images/architect.jpg" alt="banner-img">
             <div class="banner-text">
@@ -557,7 +565,7 @@
                     pellentesque elementum.</p>
                 <button class="contact-btn">Contact</button>
             </div>
-            <div class="img-1">
+            <div class="gallery-img1">
                 <img src="assets/images/team4.jpg" alt="gallery-img">
                 <p class="Author">Dan Star</p>
                 <p class="Designation">Architect</p>
